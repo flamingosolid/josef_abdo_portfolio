@@ -41,6 +41,7 @@ const BullsAndCows = () => {
   const [result, setResult] = useState("");
   const [isGameOver, setIsGameOver] = useState(false);
   const [showAndHide, setShowAndHide] = useState(true);
+  const [gameWon, setGameWon] = useState(false);
 
   useEffect(() => {
     const randomSecret =
@@ -77,8 +78,7 @@ const BullsAndCows = () => {
     }
 
     if (guess === secret) {
-      setResult("GOOD JOB!");
-      setIsGameOver(true);
+      setGameWon(true);
     } else {
       let bulls = 0;
       let cows = 0;
@@ -112,11 +112,23 @@ const BullsAndCows = () => {
 
   const startGame = () => {
     setIsGameOver(false);
+    setGameWon(false);
     setMistakes(0);
     setResult("");
     setGuess("");
     setSecret(secretWords[Math.floor(Math.random() * secretWords.length)]);
   };
+
+  if (gameWon) {
+    return (
+      <section className="game-container">
+        <div id="game-over">
+          <h1>Winner Winner!</h1>
+          <button onClick={startGame}>Play again</button>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="game-container">
