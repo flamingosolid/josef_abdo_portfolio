@@ -258,6 +258,7 @@ function Footer() {
     <>
       <footer>
         <h1>Website still in progress</h1>
+        <a href="mailto:josefabdo90@gmail.com">Give me mail!</a>
       </footer>
     </>
   );
