@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./BullsAndCowsStyles.scss";
 
 const BullsAndCows = () => {
@@ -43,7 +43,9 @@ const BullsAndCows = () => {
   const [showAndHide, setShowAndHide] = useState(true);
 
   useEffect(() => {
-    setSecret(secretWords[Math.floor(Math.random() * secretWords.length)]);
+    const randomSecret =
+      secretWords[Math.floor(Math.random() * secretWords.length)];
+    setSecret(randomSecret);
   }, []);
 
   const handleDifficultyChange = (event) => {

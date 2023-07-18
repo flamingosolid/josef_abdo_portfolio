@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./QuizStyles.scss";
 const Quiz = () => {
   const [quizData, setQuizData] = useState(null);

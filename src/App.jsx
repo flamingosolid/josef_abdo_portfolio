@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.scss";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 
 function Navbar() {
   return (
@@ -27,7 +27,7 @@ function Navbar() {
               spy={true}
               smooth={true}
               offset={-70}
-              duration={500}
+              duration={800}
             >
               About
             </Link>
@@ -39,7 +39,7 @@ function Navbar() {
               spy={true}
               smooth={true}
               offset={-70}
-              duration={500}
+              duration={1000}
             >
               Portfolio
             </Link>
@@ -236,7 +236,11 @@ function Main() {
             <Quiz />
           </div>
           <div className="fake_coffee">
-            <a href="https://fake-coffee-api.vercel.app/" target="_blank">
+            <a
+              href="https://fake-coffee-api.vercel.app/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img
                 src="./fake-coffee.png"
                 alt="picture of the api website fake coffee api"
